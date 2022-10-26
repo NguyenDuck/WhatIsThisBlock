@@ -1,0 +1,1161 @@
+/*
+©2022 by Asaki Zuki, please do not delete this text and steal any code without my permission!
+Youtube: https://www.youtube.com/c/AsakiZuki
+Facebook: https://facebook.com/asakizuki
+Discord: Kotori Itsuka#6038
+
+Asaki Zuki prefix asa_
+NguyenDuck prefix nd_
+*/
+{
+    "asa_actionbar": {
+        "type": "image",
+        "size": [
+            "100%cm + 12px",
+            "100%cm + 5px"
+        ],
+        "texture": "textures/ui/effect_background",
+        "alpha": "@hud.anim_actionbar_text_background_alpha_out",
+        "layer": 1,
+        "$text_origin": "$actionbar_text",
+        "controls": [
+            {
+                "asa_action_bar_text": {
+                    "type": "label",
+                    "min_size": [
+                        "100%c",
+                        "100%c"
+                    ],
+                    "text_alignment": "center",
+                    "localize": true,
+                    "alpha": "@hud.anim_actionbar_text_alpha_out",
+                    "layer": 31,
+                    "$invalid|default": false,
+                    "$text|default": "$text_origin",
+                    "$replaced_text": "",
+                    "$test_fluid_visible": false,
+                    "$test_fluid_type": "",
+                    "$test_fluid_percent": [
+                        100,
+                        13
+                    ],
+                    "$fontSize": "normal",
+                    "font_size": "$fontSize",
+                    "text": "$replaced_text",
+                    "variables": [
+                        {
+                            "requires": "(not ($text - ('§kinvalid') = $text))",
+                            "$invalid": true
+                        },
+                        {
+                            "requires": "(not ($text - ($mod_text) - ($prefix) = $text))",
+                            "$replaced_text": "($text - ($mod_text) - ($prefix))",
+                            "$text": "$replaced_text"
+                        },
+                        {
+                            "requires": "(not ($text - ($font_size_small) = $text))",
+                            "$replaced_text": "(($text) - ($font_size_small))",
+                            "$text": "$replaced_text",
+                            "$fontSize": "small"
+                        },
+                        {
+                            "requires": "(not ($text - ($font_size_large) = $text))",
+                            "$replaced_text": "(($text) - ($font_size_large))",
+                            "$text": "$replaced_text",
+                            "$fontSize": "large"
+                        },
+                        {
+                            "requires": "(not ($text - ($is_fluid) = $text))",
+                            "$replaced_text": "(($text) - ($is_fluid))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_visible": true
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_type_water) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_type_water))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_type": "water"
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_type_lava) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_type_lava))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_type": "lava"
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_0) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_0))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                0,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_1) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_1))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                1,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_2) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_2))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                2,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_3) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_3))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                3,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_4) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_4))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                4,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_5) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_5))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                5,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_6) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_6))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                6,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_7) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_7))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                7,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_8) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_8))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                8,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_9) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_9))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                9,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_10) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_10))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                10,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_11) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_11))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                11,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_12) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_12))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                12,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_13) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_13))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                13,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_14) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_14))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                14,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_15) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_15))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                15,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_16) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_16))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                16,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_17) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_17))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                17,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_18) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_18))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                18,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_19) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_19))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                19,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_20) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_20))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                20,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_21) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_21))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                21,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_22) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_22))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                22,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_23) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_23))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                23,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_24) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_24))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                24,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_25) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_25))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                25,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_26) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_26))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                26,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_27) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_27))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                27,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_28) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_28))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                28,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_29) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_29))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                29,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_30) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_30))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                30,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_31) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_31))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                31,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_32) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_32))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                32,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_33) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_33))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                33,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_34) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_34))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                34,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_35) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_35))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                35,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_36) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_36))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                36,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_37) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_37))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                37,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_38) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_38))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                38,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_39) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_39))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                39,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_40) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_40))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                40,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_41) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_41))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                41,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_42) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_42))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                42,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_43) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_43))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                43,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_44) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_44))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                44,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_45) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_45))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                45,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_46) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_46))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                46,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_47) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_47))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                47,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_48) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_48))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                48,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_49) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_49))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                49,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_50) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_50))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                50,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_51) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_51))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                51,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_52) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_52))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                52,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_53) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_53))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                53,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_54) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_54))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                54,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_55) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_55))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                55,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_56) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_56))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                56,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_57) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_57))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                57,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_58) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_58))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                58,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_59) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_59))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                59,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_60) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_60))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                60,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_61) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_61))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                61,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_62) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_62))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                62,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_63) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_63))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                63,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_64) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_64))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                64,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_65) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_65))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                65,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_66) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_66))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                66,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_67) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_67))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                67,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_68) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_68))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                68,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_69) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_69))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                69,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_70) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_70))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                70,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_71) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_71))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                71,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_72) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_72))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                72,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_73) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_73))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                73,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_74) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_74))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                74,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_75) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_75))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                75,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_76) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_76))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                76,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_77) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_77))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                77,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_78) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_78))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                78,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_79) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_79))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                79,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_80) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_80))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                80,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_81) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_81))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                81,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_82) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_82))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                82,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_83) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_83))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                83,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_84) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_84))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                84,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_85) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_85))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                85,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_86) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_86))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                86,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_87) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_87))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                87,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_88) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_88))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                88,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_89) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_89))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                89,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_90) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_90))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                90,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_91) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_91))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                91,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_92) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_92))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                92,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_93) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_93))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                93,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_94) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_94))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                94,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_95) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_95))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                95,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_96) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_96))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                96,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_97) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_97))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                97,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_98) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_98))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                98,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_99) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_99))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                99,
+                                13
+                            ]
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_100) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_100))",
+                            "$text": "$replaced_text",
+                            "$test_fluid_percent": [
+                                100,
+                                13
+                            ]
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "nd_fluid_bar": {
+                                "type": "image",
+                                "visible": "($test_fluid_visible and not $invalid)",
+                                "texture": "textures/ui/fluid_bg",
+                                "layer": -1,
+                                "anchor_from": "bottom_middle",
+                                "alpha": 0.5,
+                                "offset": [
+                                    0,
+                                    -25
+                                ],
+                                "size": [
+                                    "102px",
+                                    "15px"
+                                ],
+                                "controls": [
+                                    {
+                                        "nd_background": {
+                                            "type": "image",
+                                            "$texture|default": "",
+                                            "$texture_water": "textures/blocks/water_still",
+                                            "$texture_lava": "textures/blocks/lava_still",
+                                            "texture": "$texture",
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle",
+                                            "layer": 0,
+                                            "alpha": 0.75,
+                                            "tiled": "x",
+                                            "offset": [
+                                                1,
+                                                0
+                                            ],
+                                            "uv": [
+                                                0,
+                                                0
+                                            ],
+                                            "uv_size": [
+                                                16,
+                                                16
+                                            ],
+                                            "size": "$test_fluid_percent",
+                                            "variables": [
+                                                {
+                                                    "requires": "($test_fluid_type = 'water')",
+                                                    "$texture": "$texture_water"
+                                                },
+                                                {
+                                                    "requires": "($test_fluid_type = 'lava')",
+                                                    "$texture": "$texture_lava"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "nd_fallback_text": {
+                                "type": "label",
+                                "min_size": [
+                                    "100%c",
+                                    "100%c"
+                                ],
+                                "visible": "$invalid",
+                                "text_alignment": "center",
+                                "localize": true,
+                                "alpha": "@hud.anim_actionbar_text_alpha_out",
+                                "layer": 31,
+                                "text": "$text_origin"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "asa_actionbar_panel": {
+        "type": "panel",
+        "size": [
+            "100%cm",
+            "100%cm"
+        ],
+        "factory": {
+            "name": "hud_actionbar_text_factory",
+            "control_ids": {
+                "hud_actionbar_text": "hud_actionbar_text@hud.asa_actionbar"
+            }
+        }
+    },
+    "root_panel/save_icon": {
+        "ignored": true
+    },
+    "root_panel/hud_actionbar_text_area": {
+        "ignored": true
+    },
+    "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "asa_action_bar_and_savegame_icon_stack": {
+                            "type": "stack_panel",
+                            "size": [
+                                "100%cm",
+                                "100%c"
+                            ],
+                            "offset": [
+                                -5,
+                                5
+                            ],
+                            "anchor_from": "top_right",
+                            "anchor_to": "top_right",
+                            "controls": [
+                                {
+                                    "asa_actionbar_position@asa_actionbar_panel": {}
+                                },
+                                {
+                                    "asa_ampty_panel": {
+                                        "type": "panel",
+                                        "size": [
+                                            1,
+                                            2.5
+                                        ],
+                                        "bindings": [
+                                            {
+                                                "binding_name": "#auto_save_animation_visible",
+                                                "binding_name_override": "#visible"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "asa_horizontal_stack": {
+                                        "type": "stack_panel",
+                                        "size": [
+                                            "100%sm",
+                                            "100%cm"
+                                        ],
+                                        "orientation": "horizontal",
+                                        "controls": [
+                                            {
+                                                "asa_full_panel": {
+                                                    "type": "panel",
+                                                    "size": [
+                                                        "fill",
+                                                        10
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "asa_auto_save_icon@hud.auto_save": {}
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

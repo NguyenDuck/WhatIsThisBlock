@@ -1,0 +1,46 @@
+{
+	"type": "minecraftBedrock",
+	"name": "WITB - What Is This Block",
+	"namespace": "witb",
+	"authors": [
+		"NguyenDuck, Asaki Zuki"
+	],
+	"targetVersion": "1.19.30",
+	"description": "Show infomation what block you seeing",
+	"experimentalGameplay": {
+		"holidayCreatorFeatures": true,
+		"creationOfCustomBiomes": false,
+		"upcomingCreatorFeatures": false,
+		"enableGameTestFramework": true,
+		"experimentalMolangFeatures": false,
+		"educationEdition": false
+	},
+	"bdsProject": true,
+	"packs": {
+		"behaviorPack": "./BP",
+		"resourcePack": "./RP"
+	},
+	"worlds": [
+		"./worlds/*"
+	],
+	"compiler": {
+		"plugins": [
+			"generatorScripts",
+			"typeScript",
+			"entityIdentifierAlias",
+			"customEntityComponents",
+			"customItemComponents",
+			"customBlockComponents",
+			"customCommands",
+			"moLang",
+			"formatVersionCorrection",
+			[
+				"simpleRewrite",
+				{
+					"packName": "WITB - What Is This Block"
+				}
+			]
+		]
+	},
+	"bridge": {}
+}

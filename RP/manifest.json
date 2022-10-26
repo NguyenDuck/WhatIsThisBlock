@@ -1,0 +1,44 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"NguyenDuck",
+			"Asaki Zuki"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.3.5"
+			],
+			"dash": [
+				"0.10.6"
+			]
+		}
+	},
+	"header": {
+		"name": "WITB - What Is This Block",
+		"description": "Show infomation what block you seeing\nUI by Asaki Zuki Discord: Kotori Itsuka#6038, Edited by NguyenDuck Discord: DucCyberBro#5078",
+		"min_engine_version": [
+			1,
+			19,
+			30
+		],
+		"uuid": "a356f352-4dc4-4090-a8f9-d5ec0c2485d3",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"description": "UI by Asaki Zuki Discord: Kotori Itsuka#6038, Edited by NguyenDuck",
+			"uuid": "97b8bb9a-1de7-4203-aafc-67a7102b61f3",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}
