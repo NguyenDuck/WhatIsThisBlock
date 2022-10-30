@@ -7,7 +7,7 @@
 		],
 		"generated_with": {
 			"bridge": [
-				"2.3.5"
+				"2.3.6"
 			],
 			"dash": [
 				"0.10.6"
@@ -20,7 +20,7 @@
 		"min_engine_version": [
 			1,
 			19,
-			30
+			40
 		],
 		"uuid": "56d8ab29-fa40-48ef-9139-0ec54f24be0a",
 		"version": [
@@ -61,7 +61,7 @@
 			]
 		},
 		{
-			"module_name": "mojang-minecraft",
+			"module_name": "@minecraft/server",
 			"version": "1.0.0-beta"
 		}
 	]

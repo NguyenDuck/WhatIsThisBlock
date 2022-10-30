@@ -2,7 +2,7 @@ import {
     world,
     Location,
     PlayerIterator
-} from 'mojang-minecraft';
+} from '@minecraft/server';
 
 const blockTranslator = {
     "carrots": {
@@ -126,7 +126,7 @@ const blockTranslator = {
 const debugMode = true;
 const entry = "%%s\n";
 
-world.events.tick.subscribe(async _t => {
+world.events.tick.subscribe(_t => {
     let iterator = world.getPlayers();
     WITB(iterator);
 });
@@ -234,8 +234,8 @@ async function WITB(iterator) {
             let block = player.getBlockFromViewVector();
             if (block === null) continue;
             if (!player.headLocation.isNear(new Location(block.location.x, block.location.y, block.location.z), 5.8)) continue;
-            let langKey = removeNamespace(block.id, true);
-            let prefixNamespace = removeNamespace(block.id, false);
+            let langKey = removeNamespace(block.type.id, true);
+            let prefixNamespace = removeNamespace(block.type.id, false);
             let isVanillaBlock = prefixNamespace == "minecraft";
             let bT = blockTranslator[langKey];
             if (bT && bT.ref) bT = blockTranslator[bT.ref];
