@@ -23,16 +23,18 @@ NguyenDuck prefix nd_
                 "asa_action_bar_text": {
                     "type": "label",
                     "min_size": [
-                        "100%c",
-                        "100%c"
+                        "100%cm",
+                        "100%cm"
                     ],
                     "text_alignment": "center",
                     "localize": true,
                     "alpha": "@hud.anim_actionbar_text_alpha_out",
                     "layer": 31,
                     "$invalid|default": false,
+                    "$isentity|default": false,
                     "$text|default": "$text_origin",
                     "$replaced_text": "",
+                    "$entity_health": 0,
                     "$test_fluid_visible": false,
                     "$test_fluid_type": "",
                     "$test_fluid_percent": [
@@ -41,7 +43,7 @@ NguyenDuck prefix nd_
                     ],
                     "$fontSize": "normal",
                     "font_size": "$fontSize",
-                    "text": "$replaced_text",
+                    "text": "$text",
                     "variables": [
                         {
                             "requires": "(not ($text - ('§kinvalid') = $text))",
@@ -65,6 +67,18 @@ NguyenDuck prefix nd_
                             "$fontSize": "large"
                         },
                         {
+                            "requires": "(not ($text - ('§kisentity') = $text))",
+                            "$replaced_text": "($text - ('§kisentity'))",
+                            "$text": "$replaced_text",
+                            "$isentity": true
+                        },
+                        {
+                            "requires": "(not ($text - ($fluid_percent_0) = $text))",
+                            "$replaced_text": "(($text) - ($fluid_percent_0))",
+                            "$text": "$replaced_text",
+                            "$$entity_health": 1
+                        },
+                        {
                             "requires": "(not ($text - ($is_fluid) = $text))",
                             "$replaced_text": "(($text) - ($is_fluid))",
                             "$text": "$replaced_text",
@@ -83,13 +97,130 @@ NguyenDuck prefix nd_
                             "$test_fluid_type": "lava"
                         },
                         {
-                            "requires": "(not ($text - ($fluid_percent_0) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_0))",
+                            "requires": "(not ($text - ('§kh_a?1?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?1?'))",
                             "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                0,
-                                13
-                            ]
+                            "$entity_health": 1
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?2?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?2?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 2
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?3?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?3?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 3
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?4?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?4?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 4
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?5?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?5?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 5
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?6?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?6?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 6
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?7?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?7?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 7
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?8?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?8?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 8
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?9?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?9?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 9
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?10?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?10?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 10
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?11?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?11?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 11
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?12?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?12?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 12
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?13?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?13?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 13
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?14?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?14?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 14
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?15?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?15?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 15
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?16?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?16?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 16
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?17?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?17?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 17
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?18?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?18?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 18
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?19?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?19?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 19
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a?20?') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a?20?'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": 20
+                        },
+                        {
+                            "requires": "(not ($text - ('§kh_a??') = $text))",
+                            "$replaced_text": "(($text) - ('§kh_a??'))",
+                            "$text": "$replaced_text",
+                            "$entity_health": -1
                         },
                         {
                             "requires": "(not ($text - ($fluid_percent_1) = $text))",
@@ -1005,7 +1136,7 @@ NguyenDuck prefix nd_
                                     0,
                                     -25
                                 ],
-                                "size": [
+                                "min_size": [
                                     "102px",
                                     "15px"
                                 ],
@@ -1034,7 +1165,7 @@ NguyenDuck prefix nd_
                                                 16,
                                                 16
                                             ],
-                                            "size": "$test_fluid_percent",
+                                            "min_size": "$test_fluid_percent",
                                             "variables": [
                                                 {
                                                     "requires": "($test_fluid_type = 'water')",
@@ -1051,6 +1182,479 @@ NguyenDuck prefix nd_
                             }
                         },
                         {
+                            "nd_entity_health_bar": {
+                                "type": "stack_panel",
+                                "visible": "($isentity)",
+                                "$size|default": [
+                                    0,
+                                    0
+                                ],
+                                "size": "$size",
+                                "offset": [
+                                    0,
+                                    -5
+                                ],
+                                "orientation": "horizontal",
+                                "alpha": "@hud.anim_actionbar_text_alpha_out",
+                                "layer": 1,
+                                "$curtexture1": "",
+                                "$curtexture2": "",
+                                "$curtexture3": "",
+                                "$curtexture4": "",
+                                "$curtexture5": "",
+                                "$curtexture6": "",
+                                "$curtexture7": "",
+                                "$curtexture8": "",
+                                "$curtexture9": "",
+                                "$curtexture10": "",
+                                "$heart_1_visible": false,
+                                "$heart_2_visible": false,
+                                "$heart_3_visible": false,
+                                "$heart_4_visible": false,
+                                "$heart_5_visible": false,
+                                "$heart_6_visible": false,
+                                "$heart_7_visible": false,
+                                "$heart_8_visible": false,
+                                "$heart_9_visible": false,
+                                "$heart_10_visible": false,
+                                "$full": "textures/gui/heart/full",
+                                "$half": "textures/gui/heart/half",
+                                "controls": [
+                                    {
+                                        "nd_heart_1": {
+                                            "type": "image",
+                                            "visible": "$heart_1_visible",
+                                            "texture": "$curtexture1",
+                                            "anchor_from": "right_middle",
+                                            "anchor_to": "right_middle",
+                                            "offset": [
+                                                1,
+                                                0
+                                            ],
+                                            "uv": [
+                                                0,
+                                                0
+                                            ],
+                                            "uv_size": [
+                                                9,
+                                                9
+                                            ],
+                                            "size": [
+                                                10,
+                                                9
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "nd_heart_2": {
+                                            "type": "image",
+                                            "visible": "$heart_2_visible",
+                                            "texture": "$curtexture2",
+                                            "anchor_from": "right_middle",
+                                            "anchor_to": "right_middle",
+                                            "offset": [
+                                                1,
+                                                0
+                                            ],
+                                            "uv": [
+                                                0,
+                                                0
+                                            ],
+                                            "uv_size": [
+                                                9,
+                                                9
+                                            ],
+                                            "size": [
+                                                10,
+                                                9
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "nd_heart_3": {
+                                            "type": "image",
+                                            "visible": "$heart_3_visible",
+                                            "texture": "$curtexture3",
+                                            "anchor_from": "right_middle",
+                                            "anchor_to": "right_middle",
+                                            "offset": [
+                                                1,
+                                                0
+                                            ],
+                                            "uv": [
+                                                0,
+                                                0
+                                            ],
+                                            "uv_size": [
+                                                9,
+                                                9
+                                            ],
+                                            "size": [
+                                                10,
+                                                9
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "nd_heart_4": {
+                                            "type": "image",
+                                            "visible": "$heart_4_visible",
+                                            "texture": "$curtexture4",
+                                            "anchor_from": "right_middle",
+                                            "anchor_to": "right_middle",
+                                            "offset": [
+                                                1,
+                                                0
+                                            ],
+                                            "uv": [
+                                                0,
+                                                0
+                                            ],
+                                            "uv_size": [
+                                                9,
+                                                9
+                                            ],
+                                            "size": [
+                                                10,
+                                                9
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "nd_heart_5": {
+                                            "type": "image",
+                                            "visible": "$heart_5_visible",
+                                            "texture": "$curtexture5",
+                                            "anchor_from": "right_middle",
+                                            "anchor_to": "right_middle",
+                                            "offset": [
+                                                1,
+                                                0
+                                            ],
+                                            "uv": [
+                                                0,
+                                                0
+                                            ],
+                                            "uv_size": [
+                                                9,
+                                                9
+                                            ],
+                                            "size": [
+                                                10,
+                                                9
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "nd_heart_6": {
+                                            "type": "image",
+                                            "visible": "$heart_6_visible",
+                                            "texture": "$curtexture6",
+                                            "anchor_from": "right_middle",
+                                            "anchor_to": "right_middle",
+                                            "offset": [
+                                                1,
+                                                0
+                                            ],
+                                            "uv": [
+                                                0,
+                                                0
+                                            ],
+                                            "uv_size": [
+                                                9,
+                                                9
+                                            ],
+                                            "size": [
+                                                10,
+                                                9
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "nd_heart_7": {
+                                            "type": "image",
+                                            "visible": "$heart_7_visible",
+                                            "texture": "$curtexture7",
+                                            "anchor_from": "right_middle",
+                                            "anchor_to": "right_middle",
+                                            "offset": [
+                                                1,
+                                                0
+                                            ],
+                                            "uv": [
+                                                0,
+                                                0
+                                            ],
+                                            "uv_size": [
+                                                9,
+                                                9
+                                            ],
+                                            "size": [
+                                                10,
+                                                9
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "nd_heart_8": {
+                                            "type": "image",
+                                            "visible": "$heart_8_visible",
+                                            "texture": "$curtexture8",
+                                            "anchor_from": "right_middle",
+                                            "anchor_to": "right_middle",
+                                            "offset": [
+                                                1,
+                                                0
+                                            ],
+                                            "uv": [
+                                                0,
+                                                0
+                                            ],
+                                            "uv_size": [
+                                                9,
+                                                9
+                                            ],
+                                            "size": [
+                                                10,
+                                                9
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "nd_heart_9": {
+                                            "type": "image",
+                                            "visible": "$heart_9_visible",
+                                            "texture": "$curtexture9",
+                                            "anchor_from": "right_middle",
+                                            "anchor_to": "right_middle",
+                                            "offset": [
+                                                1,
+                                                0
+                                            ],
+                                            "uv": [
+                                                0,
+                                                0
+                                            ],
+                                            "uv_size": [
+                                                9,
+                                                9
+                                            ],
+                                            "size": [
+                                                10,
+                                                9
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "nd_heart_10": {
+                                            "type": "image",
+                                            "visible": "$heart_10_visible",
+                                            "texture": "$curtexture10",
+                                            "anchor_from": "right_middle",
+                                            "anchor_to": "right_middle",
+                                            "offset": [
+                                                1,
+                                                0
+                                            ],
+                                            "uv": [
+                                                0,
+                                                0
+                                            ],
+                                            "uv_size": [
+                                                9,
+                                                9
+                                            ],
+                                            "size": [
+                                                10,
+                                                9
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "variables": [
+                                    {
+                                        "requires": "($entity_health = -1)",
+                                        "$heart_1_visible": true,
+                                        "$curtexture1": "$full",
+                                        "$size": [
+                                            -25,
+                                            10
+                                        ]
+                                    },
+                                    {
+                                        "requires": "($entity_health = 1)",
+                                        "$heart_1_visible": true,
+                                        "$curtexture1": "$half"
+                                    },
+                                    {
+                                        "requires": "($entity_health > 1)",
+                                        "$heart_1_visible": true,
+                                        "$curtexture1": "$full"
+                                    },
+                                    {
+                                        "requires": "($entity_health = 3)",
+                                        "$heart_2_visible": true,
+                                        "$curtexture2": "$half"
+                                    },
+                                    {
+                                        "requires": "($entity_health > 3)",
+                                        "$heart_2_visible": true,
+                                        "$curtexture2": "$full"
+                                    },
+                                    {
+                                        "requires": "($entity_health = 5)",
+                                        "$heart_3_visible": true,
+                                        "$curtexture3": "$half"
+                                    },
+                                    {
+                                        "requires": "($entity_health > 5)",
+                                        "$heart_3_visible": true,
+                                        "$curtexture3": "$full"
+                                    },
+                                    {
+                                        "requires": "($entity_health = 7)",
+                                        "$heart_4_visible": true,
+                                        "$curtexture4": "$half"
+                                    },
+                                    {
+                                        "requires": "($entity_health > 7)",
+                                        "$heart_4_visible": true,
+                                        "$curtexture4": "$full"
+                                    },
+                                    {
+                                        "requires": "($entity_health = 9)",
+                                        "$heart_5_visible": true,
+                                        "$curtexture5": "$half"
+                                    },
+                                    {
+                                        "requires": "($entity_health > 9)",
+                                        "$heart_5_visible": true,
+                                        "$curtexture5": "$full"
+                                    },
+                                    {
+                                        "requires": "($entity_health = 11)",
+                                        "$heart_6_visible": true,
+                                        "$curtexture6": "$half"
+                                    },
+                                    {
+                                        "requires": "($entity_health > 11)",
+                                        "$heart_6_visible": true,
+                                        "$curtexture6": "$full"
+                                    },
+                                    {
+                                        "requires": "($entity_health = 13)",
+                                        "$heart_7_visible": true,
+                                        "$curtexture7": "$half"
+                                    },
+                                    {
+                                        "requires": "($entity_health > 13)",
+                                        "$heart_7_visible": true,
+                                        "$curtexture7": "$full"
+                                    },
+                                    {
+                                        "requires": "($entity_health = 15)",
+                                        "$heart_8_visible": true,
+                                        "$curtexture8": "$half"
+                                    },
+                                    {
+                                        "requires": "($entity_health > 15)",
+                                        "$heart_8_visible": true,
+                                        "$curtexture8": "$full"
+                                    },
+                                    {
+                                        "requires": "($entity_health = 17)",
+                                        "$heart_9_visible": true,
+                                        "$curtexture9": "$half"
+                                    },
+                                    {
+                                        "requires": "($entity_health > 17)",
+                                        "$heart_9_visible": true,
+                                        "$curtexture9": "$full"
+                                    },
+                                    {
+                                        "requires": "($entity_health = 19)",
+                                        "$heart_10_visible": true,
+                                        "$curtexture10": "$half"
+                                    },
+                                    {
+                                        "requires": "($entity_health > 19)",
+                                        "$heart_10_visible": true,
+                                        "$curtexture10": "$full"
+                                    },
+                                    {
+                                        "requires": "(($entity_health = 1) or ($entity_health = 2))",
+                                        "$size": [
+                                            10,
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "requires": "(($entity_health = 3) or ($entity_health = 4))",
+                                        "$size": [
+                                            20,
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "requires": "(($entity_health = 5) or ($entity_health = 6))",
+                                        "$size": [
+                                            30,
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "requires": "(($entity_health = 7) or ($entity_health = 8))",
+                                        "$size": [
+                                            40,
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "requires": "(($entity_health = 9) or ($entity_health = 10))",
+                                        "$size": [
+                                            50,
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "requires": "(($entity_health = 11) or ($entity_health = 12))",
+                                        "$size": [
+                                            60,
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "requires": "(($entity_health = 13) or ($entity_health = 14))",
+                                        "$size": [
+                                            70,
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "requires": "(($entity_health = 15) or ($entity_health = 16))",
+                                        "$size": [
+                                            80,
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "requires": "(($entity_health = 17) or ($entity_health = 18))",
+                                        "$size": [
+                                            90,
+                                            0
+                                        ]
+                                    },
+                                    {
+                                        "requires": "(($entity_health = 19) or ($entity_health > 19))",
+                                        "$size": [
+                                            100,
+                                            0
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
                             "nd_fallback_text": {
                                 "type": "label",
                                 "min_size": [
@@ -1061,7 +1665,7 @@ NguyenDuck prefix nd_
                                 "text_alignment": "center",
                                 "localize": true,
                                 "alpha": "@hud.anim_actionbar_text_alpha_out",
-                                "layer": 31,
+                                "layer": 1,
                                 "text": "$text_origin"
                             }
                         }
