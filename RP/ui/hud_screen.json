@@ -27,7 +27,7 @@ NguyenDuck prefix nd_
                         "100%cm"
                     ],
                     "text_alignment": "center",
-                    "localize": true,
+                    "localize": false,
                     "alpha": "@hud.anim_actionbar_text_alpha_out",
                     "layer": 31,
                     "$invalid|default": false,

@@ -4,7 +4,16 @@ import {
     Player,
     Block,
     Entity,
+    Effect,
+    ItemStack,
+    MinecraftEffectTypes,
+    MinecraftBlockTypes,
+    MinecraftItemTypes,
     PlayerIterator,
+    ItemFoodComponent,
+    ItemCooldownComponent,
+    ItemEnchantsComponent,
+    ItemDurabilityComponent,
     EntityHealthComponent
 } from '@minecraft/server'
 
@@ -130,7 +139,7 @@ const blockTranslator = {
 const debugMode = true
 const entry = "%%s\n"
 
-world.events.tick.subscribe(_t => {
+world.events.tick.subscribe(async _t => {
     let iterator = world.getPlayers()
     WITB(iterator)
 })
@@ -187,12 +196,9 @@ async function WITB(iterator) {
                     entity = e
                 }
             }
-            if (mode == "block") {
-                blockInfo(player, block)
-            } else if (entity) {
-                entityInfo(player, entity)
-            }
-
+            if (mode == "entity") {
+                entityInfo(player, entity).then(v => v ? null : blockInfo(player, block))
+            } else blockInfo(player, block)
         }
     } catch (er) {
         if (debugMode) console.log(`${er}`)
@@ -373,6 +379,8 @@ async function entityInfo(player, entity) {
     let langKey = removeNamespace(entity.typeId, true)
     let prefixNamespace = removeNamespace(entity.typeId, false)
     let isVanillaEntity = prefixNamespace == "minecraft"
+    let i = entity.getEffect(MinecraftEffectTypes.invisibility)
+    if (i instanceof Effect) return
     let heart_a = 0
     let v = entity.getComponent("minecraft:health")
     if (v instanceof EntityHealthComponent) {
@@ -385,6 +393,7 @@ async function entityInfo(player, entity) {
     if (heart_a > 10000) testText += " "
 
     player.runCommandAsync(`titleraw ${player.name} actionbar {"rawtext": [{"translate": "entity.${langKey}.name"}, {"translate": "\n§kisentity§kh_a?${heart_a > 20 ? "?" + "x" + Math.floor(heart_a * 10) / 10 + testText : Math.floor(heart_a) + "?"}"}, {"translate": "\n\n§r§l§9${isVanillaEntity ? "Minecraft" : "%%s"}"}, {"translate": "\n§r§o§eWhatIsThisBlock"}]}`)
+    return true
 }
 
 /**
