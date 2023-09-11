@@ -5,7 +5,7 @@
 	"authors": [
 		"NguyenDuck, Asaki Zuki"
 	],
-	"targetVersion": "1.19.40",
+	"targetVersion": "1.20.0",
 	"description": "Show infomation what block you seeing",
 	"experimentalGameplay": {
 		"holidayCreatorFeatures": true,
