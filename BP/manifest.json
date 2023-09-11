@@ -7,10 +7,10 @@
 		],
 		"generated_with": {
 			"bridge": [
-				"2.4.1"
+				"2.6.1"
 			],
 			"dash": [
-				"0.10.8"
+				"0.10.10"
 			]
 		}
 	},
@@ -19,14 +19,14 @@
 		"description": "Show infomation what block you seeing\nUI by Asaki Zuki Discord: Kotori Itsuka#6038\nScripts by NguyenDuck Discord: DucCyberBro#5078",
 		"min_engine_version": [
 			1,
-			19,
-			50
+			20,
+			10
 		],
 		"uuid": "56d8ab29-fa40-48ef-9139-0ec54f24be0a",
 		"version": [
 			1,
 			0,
-			3
+			4
 		]
 	},
 	"modules": [
@@ -62,7 +62,7 @@
 		},
 		{
 			"module_name": "@minecraft/server",
-			"version": "1.1.0-beta"
+			"version": "1.4.0-beta"
 		}
 	]
 }

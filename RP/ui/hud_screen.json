@@ -1,1697 +1,278 @@
-/*
-©2022 by Asaki Zuki, please do not delete this text and steal any code without my permission!
-Youtube: https://www.youtube.com/c/AsakiZuki
-Facebook: https://facebook.com/asakizuki
-Discord: Kotori Itsuka#6038
-
-Asaki Zuki prefix asa_
-NguyenDuck prefix nd_
-*/
 {
-    "asa_actionbar": {
-        "type": "image",
-        "size": [
-            "100%cm + 12px",
-            "100%cm + 5px"
-        ],
-        "texture": "textures/ui/effect_background",
-        "alpha": "@hud.anim_actionbar_text_background_alpha_out",
-        "layer": 1,
-        "$text_origin": "$actionbar_text",
-        "controls": [
+    "inv_slot": {
+        "type": "panel",
+        "$index|default": 17,
+        "collection_index": "$index",
+        "visible": false,
+        "bindings": [
             {
-                "asa_action_bar_text": {
-                    "type": "label",
-                    "min_size": [
-                        "100%cm",
-                        "100%cm"
-                    ],
-                    "text_alignment": "center",
-                    "localize": false,
-                    "alpha": "@hud.anim_actionbar_text_alpha_out",
-                    "layer": 31,
-                    "$invalid|default": false,
-                    "$isentity|default": false,
-                    "$text|default": "$text_origin",
-                    "$replaced_text": "",
-                    "$entity_health": 0,
-                    "$test_fluid_visible": false,
-                    "$test_fluid_type": "",
-                    "$test_fluid_percent": [
-                        100,
-                        13
-                    ],
-                    "$fontSize": "normal",
-                    "font_size": "$fontSize",
-                    "text": "$text",
-                    "variables": [
-                        {
-                            "requires": "(not ($text - ('§kinvalid') = $text))",
-                            "$invalid": true
-                        },
-                        {
-                            "requires": "(not ($text - ($mod_text) - ($prefix) = $text))",
-                            "$replaced_text": "($text - ($mod_text) - ($prefix))",
-                            "$text": "$replaced_text"
-                        },
-                        {
-                            "requires": "(not ($text - ($font_size_small) = $text))",
-                            "$replaced_text": "(($text) - ($font_size_small))",
-                            "$text": "$replaced_text",
-                            "$fontSize": "small"
-                        },
-                        {
-                            "requires": "(not ($text - ($font_size_large) = $text))",
-                            "$replaced_text": "(($text) - ($font_size_large))",
-                            "$text": "$replaced_text",
-                            "$fontSize": "large"
-                        },
-                        {
-                            "requires": "(not ($text - ('§kisentity') = $text))",
-                            "$replaced_text": "($text - ('§kisentity'))",
-                            "$text": "$replaced_text",
-                            "$isentity": true
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_0) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_0))",
-                            "$text": "$replaced_text",
-                            "$$entity_health": 1
-                        },
-                        {
-                            "requires": "(not ($text - ($is_fluid) = $text))",
-                            "$replaced_text": "(($text) - ($is_fluid))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_visible": true
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_type_water) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_type_water))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_type": "water"
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_type_lava) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_type_lava))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_type": "lava"
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?1?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?1?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 1
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?2?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?2?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 2
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?3?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?3?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 3
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?4?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?4?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 4
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?5?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?5?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 5
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?6?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?6?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 6
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?7?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?7?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 7
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?8?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?8?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 8
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?9?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?9?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 9
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?10?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?10?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 10
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?11?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?11?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 11
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?12?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?12?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 12
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?13?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?13?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 13
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?14?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?14?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 14
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?15?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?15?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 15
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?16?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?16?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 16
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?17?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?17?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 17
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?18?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?18?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 18
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?19?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?19?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 19
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a?20?') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a?20?'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": 20
-                        },
-                        {
-                            "requires": "(not ($text - ('§kh_a??') = $text))",
-                            "$replaced_text": "(($text) - ('§kh_a??'))",
-                            "$text": "$replaced_text",
-                            "$entity_health": -1
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_1) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_1))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                1,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_2) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_2))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                2,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_3) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_3))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                3,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_4) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_4))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                4,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_5) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_5))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                5,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_6) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_6))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                6,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_7) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_7))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                7,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_8) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_8))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                8,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_9) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_9))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                9,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_10) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_10))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                10,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_11) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_11))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                11,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_12) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_12))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                12,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_13) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_13))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                13,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_14) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_14))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                14,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_15) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_15))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                15,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_16) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_16))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                16,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_17) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_17))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                17,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_18) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_18))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                18,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_19) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_19))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                19,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_20) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_20))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                20,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_21) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_21))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                21,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_22) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_22))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                22,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_23) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_23))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                23,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_24) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_24))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                24,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_25) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_25))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                25,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_26) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_26))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                26,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_27) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_27))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                27,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_28) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_28))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                28,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_29) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_29))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                29,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_30) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_30))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                30,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_31) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_31))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                31,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_32) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_32))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                32,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_33) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_33))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                33,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_34) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_34))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                34,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_35) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_35))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                35,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_36) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_36))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                36,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_37) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_37))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                37,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_38) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_38))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                38,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_39) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_39))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                39,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_40) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_40))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                40,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_41) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_41))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                41,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_42) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_42))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                42,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_43) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_43))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                43,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_44) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_44))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                44,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_45) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_45))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                45,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_46) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_46))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                46,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_47) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_47))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                47,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_48) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_48))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                48,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_49) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_49))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                49,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_50) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_50))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                50,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_51) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_51))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                51,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_52) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_52))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                52,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_53) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_53))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                53,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_54) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_54))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                54,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_55) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_55))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                55,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_56) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_56))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                56,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_57) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_57))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                57,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_58) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_58))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                58,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_59) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_59))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                59,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_60) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_60))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                60,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_61) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_61))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                61,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_62) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_62))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                62,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_63) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_63))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                63,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_64) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_64))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                64,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_65) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_65))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                65,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_66) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_66))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                66,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_67) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_67))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                67,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_68) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_68))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                68,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_69) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_69))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                69,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_70) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_70))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                70,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_71) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_71))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                71,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_72) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_72))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                72,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_73) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_73))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                73,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_74) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_74))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                74,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_75) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_75))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                75,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_76) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_76))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                76,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_77) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_77))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                77,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_78) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_78))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                78,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_79) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_79))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                79,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_80) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_80))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                80,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_81) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_81))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                81,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_82) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_82))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                82,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_83) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_83))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                83,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_84) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_84))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                84,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_85) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_85))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                85,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_86) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_86))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                86,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_87) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_87))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                87,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_88) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_88))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                88,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_89) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_89))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                89,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_90) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_90))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                90,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_91) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_91))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                91,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_92) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_92))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                92,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_93) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_93))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                93,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_94) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_94))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                94,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_95) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_95))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                95,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_96) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_96))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                96,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_97) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_97))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                97,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_98) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_98))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                98,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_99) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_99))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                99,
-                                13
-                            ]
-                        },
-                        {
-                            "requires": "(not ($text - ($fluid_percent_100) = $text))",
-                            "$replaced_text": "(($text) - ($fluid_percent_100))",
-                            "$text": "$replaced_text",
-                            "$test_fluid_percent": [
-                                100,
-                                13
-                            ]
-                        }
-                    ],
-                    "controls": [
-                        {
-                            "nd_fluid_bar": {
-                                "type": "image",
-                                "visible": "($test_fluid_visible and not $invalid)",
-                                "texture": "textures/ui/fluid_bg",
-                                "layer": -1,
-                                "anchor_from": "bottom_middle",
-                                "alpha": 0.5,
-                                "offset": [
-                                    0,
-                                    -25
-                                ],
-                                "min_size": [
-                                    "102px",
-                                    "15px"
-                                ],
-                                "controls": [
-                                    {
-                                        "nd_background": {
-                                            "type": "image",
-                                            "$texture|default": "",
-                                            "$texture_water": "textures/blocks/water_still",
-                                            "$texture_lava": "textures/blocks/lava_still",
-                                            "texture": "$texture",
-                                            "anchor_from": "left_middle",
-                                            "anchor_to": "left_middle",
-                                            "layer": 0,
-                                            "alpha": 0.75,
-                                            "tiled": "x",
-                                            "offset": [
-                                                1,
-                                                0
-                                            ],
-                                            "uv": [
-                                                0,
-                                                0
-                                            ],
-                                            "uv_size": [
-                                                16,
-                                                16
-                                            ],
-                                            "min_size": "$test_fluid_percent",
-                                            "variables": [
-                                                {
-                                                    "requires": "($test_fluid_type = 'water')",
-                                                    "$texture": "$texture_water"
-                                                },
-                                                {
-                                                    "requires": "($test_fluid_type = 'lava')",
-                                                    "$texture": "$texture_lava"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "nd_entity_health_bar": {
-                                "type": "stack_panel",
-                                "visible": "($isentity)",
-                                "$size|default": [
-                                    0,
-                                    0
-                                ],
-                                "size": "$size",
-                                "offset": [
-                                    0,
-                                    -5
-                                ],
-                                "orientation": "horizontal",
-                                "alpha": "@hud.anim_actionbar_text_alpha_out",
-                                "layer": 1,
-                                "$curtexture1": "",
-                                "$curtexture2": "",
-                                "$curtexture3": "",
-                                "$curtexture4": "",
-                                "$curtexture5": "",
-                                "$curtexture6": "",
-                                "$curtexture7": "",
-                                "$curtexture8": "",
-                                "$curtexture9": "",
-                                "$curtexture10": "",
-                                "$heart_1_visible": false,
-                                "$heart_2_visible": false,
-                                "$heart_3_visible": false,
-                                "$heart_4_visible": false,
-                                "$heart_5_visible": false,
-                                "$heart_6_visible": false,
-                                "$heart_7_visible": false,
-                                "$heart_8_visible": false,
-                                "$heart_9_visible": false,
-                                "$heart_10_visible": false,
-                                "$full": "textures/gui/heart/full",
-                                "$half": "textures/gui/heart/half",
-                                "controls": [
-                                    {
-                                        "nd_heart_1": {
-                                            "type": "image",
-                                            "visible": "$heart_1_visible",
-                                            "texture": "$curtexture1",
-                                            "anchor_from": "right_middle",
-                                            "anchor_to": "right_middle",
-                                            "offset": [
-                                                1,
-                                                0
-                                            ],
-                                            "uv": [
-                                                0,
-                                                0
-                                            ],
-                                            "uv_size": [
-                                                9,
-                                                9
-                                            ],
-                                            "size": [
-                                                10,
-                                                9
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "nd_heart_2": {
-                                            "type": "image",
-                                            "visible": "$heart_2_visible",
-                                            "texture": "$curtexture2",
-                                            "anchor_from": "right_middle",
-                                            "anchor_to": "right_middle",
-                                            "offset": [
-                                                1,
-                                                0
-                                            ],
-                                            "uv": [
-                                                0,
-                                                0
-                                            ],
-                                            "uv_size": [
-                                                9,
-                                                9
-                                            ],
-                                            "size": [
-                                                10,
-                                                9
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "nd_heart_3": {
-                                            "type": "image",
-                                            "visible": "$heart_3_visible",
-                                            "texture": "$curtexture3",
-                                            "anchor_from": "right_middle",
-                                            "anchor_to": "right_middle",
-                                            "offset": [
-                                                1,
-                                                0
-                                            ],
-                                            "uv": [
-                                                0,
-                                                0
-                                            ],
-                                            "uv_size": [
-                                                9,
-                                                9
-                                            ],
-                                            "size": [
-                                                10,
-                                                9
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "nd_heart_4": {
-                                            "type": "image",
-                                            "visible": "$heart_4_visible",
-                                            "texture": "$curtexture4",
-                                            "anchor_from": "right_middle",
-                                            "anchor_to": "right_middle",
-                                            "offset": [
-                                                1,
-                                                0
-                                            ],
-                                            "uv": [
-                                                0,
-                                                0
-                                            ],
-                                            "uv_size": [
-                                                9,
-                                                9
-                                            ],
-                                            "size": [
-                                                10,
-                                                9
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "nd_heart_5": {
-                                            "type": "image",
-                                            "visible": "$heart_5_visible",
-                                            "texture": "$curtexture5",
-                                            "anchor_from": "right_middle",
-                                            "anchor_to": "right_middle",
-                                            "offset": [
-                                                1,
-                                                0
-                                            ],
-                                            "uv": [
-                                                0,
-                                                0
-                                            ],
-                                            "uv_size": [
-                                                9,
-                                                9
-                                            ],
-                                            "size": [
-                                                10,
-                                                9
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "nd_heart_6": {
-                                            "type": "image",
-                                            "visible": "$heart_6_visible",
-                                            "texture": "$curtexture6",
-                                            "anchor_from": "right_middle",
-                                            "anchor_to": "right_middle",
-                                            "offset": [
-                                                1,
-                                                0
-                                            ],
-                                            "uv": [
-                                                0,
-                                                0
-                                            ],
-                                            "uv_size": [
-                                                9,
-                                                9
-                                            ],
-                                            "size": [
-                                                10,
-                                                9
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "nd_heart_7": {
-                                            "type": "image",
-                                            "visible": "$heart_7_visible",
-                                            "texture": "$curtexture7",
-                                            "anchor_from": "right_middle",
-                                            "anchor_to": "right_middle",
-                                            "offset": [
-                                                1,
-                                                0
-                                            ],
-                                            "uv": [
-                                                0,
-                                                0
-                                            ],
-                                            "uv_size": [
-                                                9,
-                                                9
-                                            ],
-                                            "size": [
-                                                10,
-                                                9
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "nd_heart_8": {
-                                            "type": "image",
-                                            "visible": "$heart_8_visible",
-                                            "texture": "$curtexture8",
-                                            "anchor_from": "right_middle",
-                                            "anchor_to": "right_middle",
-                                            "offset": [
-                                                1,
-                                                0
-                                            ],
-                                            "uv": [
-                                                0,
-                                                0
-                                            ],
-                                            "uv_size": [
-                                                9,
-                                                9
-                                            ],
-                                            "size": [
-                                                10,
-                                                9
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "nd_heart_9": {
-                                            "type": "image",
-                                            "visible": "$heart_9_visible",
-                                            "texture": "$curtexture9",
-                                            "anchor_from": "right_middle",
-                                            "anchor_to": "right_middle",
-                                            "offset": [
-                                                1,
-                                                0
-                                            ],
-                                            "uv": [
-                                                0,
-                                                0
-                                            ],
-                                            "uv_size": [
-                                                9,
-                                                9
-                                            ],
-                                            "size": [
-                                                10,
-                                                9
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "nd_heart_10": {
-                                            "type": "image",
-                                            "visible": "$heart_10_visible",
-                                            "texture": "$curtexture10",
-                                            "anchor_from": "right_middle",
-                                            "anchor_to": "right_middle",
-                                            "offset": [
-                                                1,
-                                                0
-                                            ],
-                                            "uv": [
-                                                0,
-                                                0
-                                            ],
-                                            "uv_size": [
-                                                9,
-                                                9
-                                            ],
-                                            "size": [
-                                                10,
-                                                9
-                                            ]
-                                        }
-                                    }
-                                ],
-                                "variables": [
-                                    {
-                                        "requires": "($entity_health = -1)",
-                                        "$heart_1_visible": true,
-                                        "$curtexture1": "$full",
-                                        "$size": [
-                                            -25,
-                                            10
-                                        ]
-                                    },
-                                    {
-                                        "requires": "($entity_health = 1)",
-                                        "$heart_1_visible": true,
-                                        "$curtexture1": "$half"
-                                    },
-                                    {
-                                        "requires": "($entity_health > 1)",
-                                        "$heart_1_visible": true,
-                                        "$curtexture1": "$full"
-                                    },
-                                    {
-                                        "requires": "($entity_health = 3)",
-                                        "$heart_2_visible": true,
-                                        "$curtexture2": "$half"
-                                    },
-                                    {
-                                        "requires": "($entity_health > 3)",
-                                        "$heart_2_visible": true,
-                                        "$curtexture2": "$full"
-                                    },
-                                    {
-                                        "requires": "($entity_health = 5)",
-                                        "$heart_3_visible": true,
-                                        "$curtexture3": "$half"
-                                    },
-                                    {
-                                        "requires": "($entity_health > 5)",
-                                        "$heart_3_visible": true,
-                                        "$curtexture3": "$full"
-                                    },
-                                    {
-                                        "requires": "($entity_health = 7)",
-                                        "$heart_4_visible": true,
-                                        "$curtexture4": "$half"
-                                    },
-                                    {
-                                        "requires": "($entity_health > 7)",
-                                        "$heart_4_visible": true,
-                                        "$curtexture4": "$full"
-                                    },
-                                    {
-                                        "requires": "($entity_health = 9)",
-                                        "$heart_5_visible": true,
-                                        "$curtexture5": "$half"
-                                    },
-                                    {
-                                        "requires": "($entity_health > 9)",
-                                        "$heart_5_visible": true,
-                                        "$curtexture5": "$full"
-                                    },
-                                    {
-                                        "requires": "($entity_health = 11)",
-                                        "$heart_6_visible": true,
-                                        "$curtexture6": "$half"
-                                    },
-                                    {
-                                        "requires": "($entity_health > 11)",
-                                        "$heart_6_visible": true,
-                                        "$curtexture6": "$full"
-                                    },
-                                    {
-                                        "requires": "($entity_health = 13)",
-                                        "$heart_7_visible": true,
-                                        "$curtexture7": "$half"
-                                    },
-                                    {
-                                        "requires": "($entity_health > 13)",
-                                        "$heart_7_visible": true,
-                                        "$curtexture7": "$full"
-                                    },
-                                    {
-                                        "requires": "($entity_health = 15)",
-                                        "$heart_8_visible": true,
-                                        "$curtexture8": "$half"
-                                    },
-                                    {
-                                        "requires": "($entity_health > 15)",
-                                        "$heart_8_visible": true,
-                                        "$curtexture8": "$full"
-                                    },
-                                    {
-                                        "requires": "($entity_health = 17)",
-                                        "$heart_9_visible": true,
-                                        "$curtexture9": "$half"
-                                    },
-                                    {
-                                        "requires": "($entity_health > 17)",
-                                        "$heart_9_visible": true,
-                                        "$curtexture9": "$full"
-                                    },
-                                    {
-                                        "requires": "($entity_health = 19)",
-                                        "$heart_10_visible": true,
-                                        "$curtexture10": "$half"
-                                    },
-                                    {
-                                        "requires": "($entity_health > 19)",
-                                        "$heart_10_visible": true,
-                                        "$curtexture10": "$full"
-                                    },
-                                    {
-                                        "requires": "(($entity_health = 1) or ($entity_health = 2))",
-                                        "$size": [
-                                            10,
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "requires": "(($entity_health = 3) or ($entity_health = 4))",
-                                        "$size": [
-                                            20,
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "requires": "(($entity_health = 5) or ($entity_health = 6))",
-                                        "$size": [
-                                            30,
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "requires": "(($entity_health = 7) or ($entity_health = 8))",
-                                        "$size": [
-                                            40,
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "requires": "(($entity_health = 9) or ($entity_health = 10))",
-                                        "$size": [
-                                            50,
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "requires": "(($entity_health = 11) or ($entity_health = 12))",
-                                        "$size": [
-                                            60,
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "requires": "(($entity_health = 13) or ($entity_health = 14))",
-                                        "$size": [
-                                            70,
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "requires": "(($entity_health = 15) or ($entity_health = 16))",
-                                        "$size": [
-                                            80,
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "requires": "(($entity_health = 17) or ($entity_health = 18))",
-                                        "$size": [
-                                            90,
-                                            0
-                                        ]
-                                    },
-                                    {
-                                        "requires": "(($entity_health = 19) or ($entity_health > 19))",
-                                        "$size": [
-                                            100,
-                                            0
-                                        ]
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "nd_fallback_text": {
-                                "type": "label",
-                                "min_size": [
-                                    "100%c",
-                                    "100%c"
-                                ],
-                                "visible": "$invalid",
-                                "text_alignment": "center",
-                                "localize": true,
-                                "alpha": "@hud.anim_actionbar_text_alpha_out",
-                                "layer": 1,
-                                "text": "$text_origin"
-                            }
-                        }
-                    ]
-                }
+                "binding_name": "#item_id_aux",
+                "binding_type": "collection",
+                "binding_collection_name": "hotbar_items",
+                "binding_condition": "visibility_changed"
+            },
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#text"
+            },
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#current_text",
+                "binding_condition": "visibility_changed"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text = $block_icon_const)",
+                "target_property_name": "#visible"
             }
         ]
     },
-    "asa_actionbar_panel": {
-        "type": "panel",
+    "witb": {
+        "type": "image",
         "size": [
             "100%cm",
             "100%cm"
         ],
-        "factory": {
-            "name": "hud_actionbar_text_factory",
-            "control_ids": {
-                "hud_actionbar_text": "hud_actionbar_text@hud.asa_actionbar"
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "texture": "textures/ui/purpleBorder",
+        "visible": false,
+        "controls": [
+            {
+                "block_renderer": {
+                    "type": "custom",
+                    "renderer": "inventory_item_renderer",
+                    "size": [
+                        16,
+                        16
+                    ],
+                    "offset": [
+                        "6px",
+                        "6px"
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "controls": [
+                        {
+                            "stack": {
+                                "type": "stack_panel",
+                                "size": [
+                                    0,
+                                    0
+                                ],
+                                "collection_name": "hotbar_items",
+                                "controls": [
+                                    {
+                                        "slot@hud.inv_slot": {}
+                                    }
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "slot",
+                                        "resolve_sibling_scope": true,
+                                        "source_property_name": "#item_id_aux",
+                                        "target_property_name": "#item_id_aux"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "stack",
+                            "source_property_name": "#item_id_aux",
+                            "target_property_name": "#item_id_aux"
+                        }
+                    ]
+                }
+            },
+            {
+                "block_name_container": {
+                    "type": "panel",
+                    "size": [
+                        "100%cm + 28px + 6px",
+                        "100%cm + 6px"
+                    ],
+                    "$offset|default": [
+                        "28px",
+                        "6px"
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "controls": [
+                        {
+                            "block_name": {
+                                "type": "label",
+                                "font_scale_factor": "$font_scale",
+                                "layer": 1,
+                                "text": "#text",
+                                "localize": true,
+                                "offset": "$offset",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "controls": [
+                                    {
+                                        "get_block_name": {
+                                            "type": "label",
+                                            "size": [
+                                                0,
+                                                0
+                                            ],
+                                            "visible": false,
+                                            "text": "#text",
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "#hud_subtitle_text_string",
+                                                    "binding_name_override": "#text"
+                                                },
+                                                {
+                                                    "binding_name": "#hud_subtitle_text_string",
+                                                    "binding_name_override": "#current",
+                                                    "binding_condition": "visibility_changed"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(not (#text = #current)) and not ((#text - $block_name_const) = #text))",
+                                                    "target_property_name": "#visible"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "get_block_name",
+                                        "resolve_sibling_scope": true,
+                                        "source_property_name": "(#current - $block_name_const)",
+                                        "target_property_name": "#text"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "block_namespace_container": {
+                    "type": "panel",
+                    "size": [
+                        "100%cm + 28px + 6px",
+                        "100%cm + 16px + 6px"
+                    ],
+                    "$offset|default": [
+                        "28px",
+                        "16px"
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "controls": [
+                        {
+                            "block_namespace": {
+                                "type": "label",
+                                "font_scale_factor": 0.8,
+                                "text": "#text",
+                                "offset": "$offset",
+                                "localize": true,
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "controls": [
+                                    {
+                                        "get_block_namespace": {
+                                            "type": "label",
+                                            "size": [
+                                                0,
+                                                0
+                                            ],
+                                            "text": "#text",
+                                            "visible": false,
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "#hud_title_text_string",
+                                                    "binding_name_override": "#text"
+                                                },
+                                                {
+                                                    "binding_name": "#hud_title_text_string",
+                                                    "binding_name_override": "#current_text",
+                                                    "binding_condition": "visibility_changed"
+                                                },
+                                                {
+                                                    "binding_type": "view",
+                                                    "source_property_name": "(not (#text = #current_text)) and not ((#text - $block_namespace_const) = #text))",
+                                                    "target_property_name": "#visible"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "get_block_namespace",
+                                        "resolve_sibling_scope": true,
+                                        "source_property_name": "('§o§9' + (#current_text - $block_namespace_const))",
+                                        "target_property_name": "#text"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "block_desc_container": {
+                    "type": "label",
+                    "size": [
+                        "100%cm + 6px + 6px",
+                        "100%cm + 26px + 6px"
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "text": "#text",
+                    "controls": [
+                        {
+                            "text": {
+                                "type": "label",
+                                "font_scale_factor": "$font_scale",
+                                "text": "#text",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    "6px",
+                                    "26px"
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_type": "view",
+                                        "source_control_name": "block_desc",
+                                        "source_property_name": "#text",
+                                        "target_property_name": "#text"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "block_desc",
+                            "source_property_name": "(not (#text = ''))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
             }
-        }
-    },
-    "root_panel/save_icon": {
-        "ignored": true
-    },
-    "root_panel/hud_actionbar_text_area": {
-        "ignored": true
+        ],
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "get_disabled",
+                "source_property_name": "(not (#current_text = $block_view_disabled))",
+                "target_property_name": "#visible"
+            }
+        ]
     },
     "root_panel": {
         "modifications": [
@@ -1700,60 +281,78 @@ NguyenDuck prefix nd_
                 "operation": "insert_front",
                 "value": [
                     {
-                        "asa_action_bar_and_savegame_icon_stack": {
-                            "type": "stack_panel",
+                        "@hud.witb": {}
+                    },
+                    {
+                        "get_disabled": {
+                            "type": "label",
                             "size": [
-                                "100%cm",
-                                "100%c"
+                                0,
+                                0
                             ],
-                            "offset": [
-                                -5,
-                                5
+                            "text": "#text",
+                            "bindings": [
+                                {
+                                    "binding_name": "#hud_title_text_string",
+                                    "binding_name_override": "#text"
+                                },
+                                {
+                                    "binding_name": "#hud_title_text_string",
+                                    "binding_name_override": "#current_text",
+                                    "binding_condition": "visibility_changed"
+                                },
+                                {
+                                    "binding_type": "view",
+                                    "source_property_name": "(#text = $block_view_disabled)",
+                                    "target_property_name": "#visible"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "block_desc": {
+                            "type": "label",
+                            "font_scale_factor": "$font_scale",
+                            "text": "#text",
+                            "size": [
+                                0,
+                                0
                             ],
-                            "anchor_from": "top_right",
-                            "anchor_to": "top_right",
                             "controls": [
                                 {
-                                    "asa_actionbar_position@asa_actionbar_panel": {}
-                                },
-                                {
-                                    "asa_ampty_panel": {
-                                        "type": "panel",
+                                    "get_block_desc": {
+                                        "type": "label",
                                         "size": [
-                                            1,
-                                            2.5
+                                            0,
+                                            0
                                         ],
+                                        "text": "#text",
                                         "bindings": [
                                             {
-                                                "binding_name": "#auto_save_animation_visible",
-                                                "binding_name_override": "#visible"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "asa_horizontal_stack": {
-                                        "type": "stack_panel",
-                                        "size": [
-                                            "100%sm",
-                                            "100%cm"
-                                        ],
-                                        "orientation": "horizontal",
-                                        "controls": [
-                                            {
-                                                "asa_full_panel": {
-                                                    "type": "panel",
-                                                    "size": [
-                                                        "fill",
-                                                        10
-                                                    ]
-                                                }
+                                                "binding_name": "#hud_subtitle_text_string",
+                                                "binding_name_override": "#text"
                                             },
                                             {
-                                                "asa_auto_save_icon@hud.auto_save": {}
+                                                "binding_name": "#hud_subtitle_text_string",
+                                                "binding_name_override": "#current_text",
+                                                "binding_condition": "visibility_changed"
+                                            },
+                                            {
+                                                "binding_type": "view",
+                                                "source_property_name": "(not ((#hud_title_text_string - $block_namespace_const) = #hud_title_text_string)) and (not (#text = #current_text)) and ((#text - $block_name_const) = #text)",
+                                                "target_property_name": "#visible"
                                             }
                                         ]
                                     }
+                                }
+                            ],
+                            "bindings": [
+                                {
+                                    "binding_type": "view",
+                                    "source_control_name": "get_block_desc",
+                                    "resolve_sibling_scope": true,
+                                    "source_property_name": "#current_text",
+                                    "target_property_name": "#text"
                                 }
                             ]
                         }
