@@ -1,10 +1,13 @@
 {
     "compilerOptions": {
+        "target": "ESNext",
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
-        "sourceMap": true,
-        "pretty": true,
+        "sourceMap": false,
+        "pretty": false,
+        "removeComments": true,
     },
+    "files": ["main.ts"],
     "exclude": [
         "node_modules"
     ]
