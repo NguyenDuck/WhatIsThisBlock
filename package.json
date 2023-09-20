@@ -1,0 +1,19 @@
+{
+	"name": "what-is-this-block",
+	"version": "1.0.0",
+	"main": "main.ts",
+	"devDependencies": {
+		"@types/node": "^20.6.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/NguyenDuck/WhatIsThisBlock.git"
+	},
+	"author": "NguyenDuck",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/NguyenDuck/WhatIsThisBlock/issues"
+	},
+	"homepage": "https://github.com/NguyenDuck/WhatIsThisBlock#readme",
+	"description": ""
+}

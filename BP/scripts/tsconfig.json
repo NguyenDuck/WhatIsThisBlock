@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "sourceMap": true,
+        "pretty": true,
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

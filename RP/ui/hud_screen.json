@@ -12,17 +12,17 @@
                 "binding_condition": "visibility_changed"
             },
             {
-                "binding_name": "#hud_title_text_string",
+                "binding_name": "#hud_subtitle_text_string",
                 "binding_name_override": "#text"
             },
             {
-                "binding_name": "#hud_title_text_string",
-                "binding_name_override": "#current_text",
+                "binding_name": "#hud_subtitle_text_string",
+                "binding_name_override": "#current",
                 "binding_condition": "visibility_changed"
             },
             {
                 "binding_type": "view",
-                "source_property_name": "(#text = $block_icon_const)",
+                "source_property_name": "(not (#text = #current)) and not ((#text - $block_name_const) = #text))",
                 "target_property_name": "#visible"
             }
         ]
@@ -281,7 +281,7 @@
                 "operation": "insert_front",
                 "value": [
                     {
-                        "@hud.witb": {}
+                        "witb@hud.witb": {}
                     },
                     {
                         "get_disabled": {
@@ -312,7 +312,6 @@
                     {
                         "block_desc": {
                             "type": "label",
-                            "font_scale_factor": "$font_scale",
                             "text": "#text",
                             "size": [
                                 0,

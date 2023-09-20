@@ -6,7 +6,7 @@
         "request": "attach",
         "name": "Wait for Minecraft Debug Connections",
         "mode": "listen",
-        "localRoot": "${workspaceFolder}/",
+        "localRoot": "C:/Users/duckd/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/WITB - What Is This Block BP/scripts",
         "port": 19144
       }
     ]

@@ -1,8 +1,8 @@
-import { Block, BlockPermutation, BlockType, ItemStack } from "@minecraft/server";
+import { Block, BlockPermutation, BlockType, ItemStack, Vector3 } from "@minecraft/server";
 
 
 export default class BlockBase {
-    
+
     private _split: string[]
     private _namespace: string
     private _name: string
@@ -13,9 +13,21 @@ export default class BlockBase {
         this._name = this._split[1]
     }
 
-    public type = this.block.type
-    public permutation = this.block.permutation
-    public location = this.block.location
+    public get type(): BlockType {
+        return this.block.type
+    }
+
+    public get permutation(): BlockPermutation {
+        return this.block.permutation
+    }
+
+    public get location(): Vector3 {
+        return this.block.location
+    }
+
+    public get tags(): string[] {
+        return this.block.getTags()
+    }
 
     public getItemStack(): ItemStack {
         return this.block.getItemStack()
