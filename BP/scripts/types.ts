@@ -1,5 +1,4 @@
-import { ItemStack, RawMessage } from "@minecraft/server";
-import { MinecraftBlockTypes } from "@minecraft/vanilla-data";
+import { RawMessage } from "@minecraft/server";
 
 export type Message = string | RawMessage | (string | RawMessage)[]
 export type BlockStateMap = Map<string, string | number | boolean>

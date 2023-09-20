@@ -26,6 +26,5 @@ export abstract class Displayer {
             subtitle: subtitle
         })
         this.lastMessage = [title, subtitle]
-        console.log("Displayer", JSON.stringify(this.lastMessage, undefined, 2))
     }
 }

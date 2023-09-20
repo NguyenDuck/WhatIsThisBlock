@@ -1,7 +1,6 @@
 import { world, system } from '@minecraft/server';
 import BlockInfo from './BlockInfo';
-
-const debugMode = true
+import Settings from './Settings';
 
 const range = { maxDistance: 7.2 }
 world.afterEvents.playerSpawn.subscribe(({ player }) => {
@@ -14,7 +13,7 @@ world.afterEvents.playerSpawn.subscribe(({ player }) => {
             block_info.send(block)
         }
         catch (e) {
-            debugMode ? world.sendMessage(`${e} ${e.stack}`) : null
+            Settings.debugMode ? world.sendMessage(`${e} ${e.stack}`) : null
         }
     }, 3)
 })

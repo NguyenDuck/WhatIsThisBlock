@@ -5,6 +5,7 @@ import { BlockTransEntry, StateHandler, TransKey, TransType } from "./types";
 import BlockNameDisplayer from "./BlockNameDisplayer";
 import BlockDescDisplayer from "./BlockDescDisplayer";
 import { isPermutationEquals, toBlockStateMap } from "./utils";
+import Settings from "./Settings";
 
 export default class BlockInfo {
     private playerInv: EntityInventoryComponent
@@ -37,7 +38,7 @@ export default class BlockInfo {
 
     public send(block?: Block): void {
         if (!block) return this.handleNonBlock()
-        this.logCurrentBlock(block)
+        if (Settings.debugMode) this.logCurrentBlock(block)
 
         this.block = new BlockBase(block)
 
@@ -206,7 +207,7 @@ export default class BlockInfo {
                 pattern = `(${pattern})`
                 if (lang.match(pattern)) {
                     trans = BlockTranslator[key]
-                    console.log("GetTranslator", JSON.stringify(trans))
+                    if (Settings.debugMode) console.log("GetTranslator", JSON.stringify(trans))
                     this._lastKeyTranslator = key
                     if (trans && trans.Ref) {
                         this._lastKeyTranslator = trans.Ref

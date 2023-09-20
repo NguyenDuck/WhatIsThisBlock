@@ -56,12 +56,6 @@ export default class BlockNameDisplayer extends Displayer {
      */
     public setName(name: TransKey) {
         if (this.block_name && this.block_name.equals(name)) return
-        console.log("BlockNameDisplayer", JSON.stringify(name))
-        try {
-            throw new Error()
-        } catch (e) {
-            console.log("BlockNameDisplayer Stack", JSON.stringify(name), e, e.stack)
-        }
         this.block_name = name
         this._isChanged = true
     }
