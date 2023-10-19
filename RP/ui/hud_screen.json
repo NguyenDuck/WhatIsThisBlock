@@ -1,363 +1,444 @@
 {
-    "inv_slot": {
-        "type": "panel",
-        "$index|default": 17,
-        "collection_index": "$index",
-        "visible": false,
-        "bindings": [
-            {
-                "binding_name": "#item_id_aux",
-                "binding_type": "collection",
-                "binding_collection_name": "hotbar_items",
-                "binding_condition": "visibility_changed"
-            },
-            {
-                "binding_name": "#hud_subtitle_text_string",
-                "binding_name_override": "#text"
-            },
-            {
-                "binding_name": "#hud_subtitle_text_string",
-                "binding_name_override": "#current",
-                "binding_condition": "visibility_changed"
-            },
-            {
-                "binding_type": "view",
-                "source_property_name": "(not (#text = #current)) and not ((#text - $block_name_const) = #text))",
-                "target_property_name": "#visible"
-            }
-        ]
-    },
-    "witb": {
-        "type": "image",
-        "size": [
-            "100%cm",
-            "100%cm"
-        ],
-        "anchor_from": "top_right",
-        "anchor_to": "top_right",
-        "texture": "textures/ui/purpleBorder",
-        "visible": false,
-        "controls": [
-            {
-                "block_renderer": {
-                    "type": "custom",
-                    "renderer": "inventory_item_renderer",
-                    "size": [
-                        16,
-                        16
-                    ],
-                    "offset": [
-                        "6px",
-                        "6px"
-                    ],
-                    "anchor_from": "top_left",
-                    "anchor_to": "top_left",
-                    "controls": [
-                        {
-                            "stack": {
-                                "type": "stack_panel",
-                                "size": [
-                                    0,
-                                    0
-                                ],
-                                "collection_name": "hotbar_items",
-                                "controls": [
-                                    {
-                                        "slot@hud.inv_slot": {}
-                                    }
-                                ],
-                                "bindings": [
-                                    {
-                                        "binding_type": "view",
-                                        "source_control_name": "slot",
-                                        "resolve_sibling_scope": true,
-                                        "source_property_name": "#item_id_aux",
-                                        "target_property_name": "#item_id_aux"
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "bindings": [
-                        {
-                            "binding_type": "view",
-                            "source_control_name": "stack",
-                            "source_property_name": "#item_id_aux",
-                            "target_property_name": "#item_id_aux"
-                        }
-                    ]
-                }
-            },
-            {
-                "block_name_container": {
-                    "type": "panel",
-                    "size": [
-                        "100%cm + 28px + 6px",
-                        "100%cm + 6px"
-                    ],
-                    "$offset|default": [
-                        "28px",
-                        "6px"
-                    ],
-                    "anchor_from": "top_left",
-                    "anchor_to": "top_left",
-                    "controls": [
-                        {
-                            "block_name": {
-                                "type": "label",
-                                "font_scale_factor": "$font_scale",
-                                "layer": 1,
-                                "text": "#text",
-                                "localize": true,
-                                "offset": "$offset",
-                                "anchor_from": "top_left",
-                                "anchor_to": "top_left",
-                                "controls": [
-                                    {
-                                        "get_block_name": {
-                                            "type": "label",
-                                            "size": [
-                                                0,
-                                                0
-                                            ],
-                                            "visible": false,
-                                            "text": "#text",
-                                            "bindings": [
-                                                {
-                                                    "binding_name": "#hud_subtitle_text_string",
-                                                    "binding_name_override": "#text"
-                                                },
-                                                {
-                                                    "binding_name": "#hud_subtitle_text_string",
-                                                    "binding_name_override": "#current",
-                                                    "binding_condition": "visibility_changed"
-                                                },
-                                                {
-                                                    "binding_type": "view",
-                                                    "source_property_name": "(not (#text = #current)) and not ((#text - $block_name_const) = #text))",
-                                                    "target_property_name": "#visible"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                ],
-                                "bindings": [
-                                    {
-                                        "binding_type": "view",
-                                        "source_control_name": "get_block_name",
-                                        "resolve_sibling_scope": true,
-                                        "source_property_name": "(#current - $block_name_const)",
-                                        "target_property_name": "#text"
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "block_namespace_container": {
-                    "type": "panel",
-                    "size": [
-                        "100%cm + 28px + 6px",
-                        "100%cm + 16px + 6px"
-                    ],
-                    "$offset|default": [
-                        "28px",
-                        "16px"
-                    ],
-                    "anchor_from": "top_left",
-                    "anchor_to": "top_left",
-                    "controls": [
-                        {
-                            "block_namespace": {
-                                "type": "label",
-                                "font_scale_factor": 0.8,
-                                "text": "#text",
-                                "offset": "$offset",
-                                "localize": true,
-                                "anchor_from": "top_left",
-                                "anchor_to": "top_left",
-                                "controls": [
-                                    {
-                                        "get_block_namespace": {
-                                            "type": "label",
-                                            "size": [
-                                                0,
-                                                0
-                                            ],
-                                            "text": "#text",
-                                            "visible": false,
-                                            "bindings": [
-                                                {
-                                                    "binding_name": "#hud_title_text_string",
-                                                    "binding_name_override": "#text"
-                                                },
-                                                {
-                                                    "binding_name": "#hud_title_text_string",
-                                                    "binding_name_override": "#current_text",
-                                                    "binding_condition": "visibility_changed"
-                                                },
-                                                {
-                                                    "binding_type": "view",
-                                                    "source_property_name": "(not (#text = #current_text)) and not ((#text - $block_namespace_const) = #text))",
-                                                    "target_property_name": "#visible"
-                                                }
-                                            ]
-                                        }
-                                    }
-                                ],
-                                "bindings": [
-                                    {
-                                        "binding_type": "view",
-                                        "source_control_name": "get_block_namespace",
-                                        "resolve_sibling_scope": true,
-                                        "source_property_name": "('§o§9' + (#current_text - $block_namespace_const))",
-                                        "target_property_name": "#text"
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            },
-            {
-                "block_desc_container": {
-                    "type": "label",
-                    "size": [
-                        "100%cm + 6px + 6px",
-                        "100%cm + 26px + 6px"
-                    ],
-                    "anchor_from": "top_left",
-                    "anchor_to": "top_left",
-                    "text": "#text",
-                    "controls": [
-                        {
-                            "text": {
-                                "type": "label",
-                                "font_scale_factor": "$font_scale",
-                                "text": "#text",
-                                "anchor_from": "top_left",
-                                "anchor_to": "top_left",
-                                "offset": [
-                                    "6px",
-                                    "26px"
-                                ],
-                                "bindings": [
-                                    {
-                                        "binding_type": "view",
-                                        "source_control_name": "block_desc",
-                                        "source_property_name": "#text",
-                                        "target_property_name": "#text"
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "bindings": [
-                        {
-                            "binding_type": "view",
-                            "source_control_name": "block_desc",
-                            "source_property_name": "(not (#text = ''))",
-                            "target_property_name": "#visible"
-                        }
-                    ]
-                }
-            }
-        ],
-        "bindings": [
-            {
-                "binding_type": "view",
-                "source_control_name": "get_disabled",
-                "source_property_name": "(not (#current_text = $block_view_disabled))",
-                "target_property_name": "#visible"
-            }
-        ]
-    },
-    "root_panel": {
-        "modifications": [
-            {
-                "array_name": "controls",
-                "operation": "insert_front",
-                "value": [
-                    {
-                        "witb@hud.witb": {}
-                    },
-                    {
-                        "get_disabled": {
-                            "type": "label",
-                            "size": [
-                                0,
-                                0
-                            ],
-                            "text": "#text",
-                            "bindings": [
-                                {
-                                    "binding_name": "#hud_title_text_string",
-                                    "binding_name_override": "#text"
-                                },
-                                {
-                                    "binding_name": "#hud_title_text_string",
-                                    "binding_name_override": "#current_text",
-                                    "binding_condition": "visibility_changed"
-                                },
-                                {
-                                    "binding_type": "view",
-                                    "source_property_name": "(#text = $block_view_disabled)",
-                                    "target_property_name": "#visible"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "block_desc": {
-                            "type": "label",
-                            "text": "#text",
-                            "size": [
-                                0,
-                                0
-                            ],
-                            "controls": [
-                                {
-                                    "get_block_desc": {
-                                        "type": "label",
-                                        "size": [
-                                            0,
-                                            0
-                                        ],
-                                        "text": "#text",
-                                        "bindings": [
-                                            {
-                                                "binding_name": "#hud_subtitle_text_string",
-                                                "binding_name_override": "#text"
-                                            },
-                                            {
-                                                "binding_name": "#hud_subtitle_text_string",
-                                                "binding_name_override": "#current_text",
-                                                "binding_condition": "visibility_changed"
-                                            },
-                                            {
-                                                "binding_type": "view",
-                                                "source_property_name": "(not ((#hud_title_text_string - $block_namespace_const) = #hud_title_text_string)) and (not (#text = #current_text)) and ((#text - $block_name_const) = #text)",
-                                                "target_property_name": "#visible"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ],
-                            "bindings": [
-                                {
-                                    "binding_type": "view",
-                                    "source_control_name": "get_block_desc",
-                                    "resolve_sibling_scope": true,
-                                    "source_property_name": "#current_text",
-                                    "target_property_name": "#text"
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        ]
-    }
+	"inv_slot": {
+		"type": "panel",
+		"$index|default": 17,
+		"collection_index": "$index",
+		"visible": false,
+		"bindings": [
+			{
+				"binding_name": "#item_id_aux",
+				"binding_type": "collection",
+				"binding_collection_name": "hotbar_items",
+				"binding_condition": "visibility_changed"
+			},
+			{
+				"binding_name": "#hud_subtitle_text_string",
+				"binding_name_override": "#text"
+			},
+			{
+				"binding_name": "#hud_subtitle_text_string",
+				"binding_name_override": "#current",
+				"binding_condition": "visibility_changed"
+			},
+			{
+				"binding_type": "view",
+				"source_property_name": "(not (#text = #current)) and not ((#text - $name_const) = #text))",
+				"target_property_name": "#visible"
+			}
+		]
+	},
+	"heart": {
+		"type": "panel",
+		"size": [7.5, 8],
+		"controls": [
+			{
+				"heart_img": {
+					"type": "image",
+					"offset": [0.5, 0.5],
+					"size": [7, 7],
+					"uv": [0, 0],
+					"uv_size": [9, 9],
+					"texture": "textures/gui/heart/full"
+				}
+			}
+		]
+	},
+	"witb": {
+		"type": "image",
+		"size": ["100%cm", "100%cm"],
+		"anchor_from": "top_right",
+		"anchor_to": "top_right",
+		"texture": "textures/ui/purpleBorder",
+		"visible": false,
+		"controls": [
+			{
+				"renderer_container": {
+					"type": "panel",
+					"size": [24, 24],
+					"offset": [6, 6],
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
+					"controls": [
+						{
+							"block_renderer": {
+								"type": "custom",
+								"max_size": [16, 16],
+								"renderer": "inventory_item_renderer",
+								"anchor_from": "top_left",
+								"anchor_to": "top_left",
+								"controls": [
+									{
+										"stack": {
+											"type": "stack_panel",
+											"size": [0, 0],
+											"collection_name": "hotbar_items",
+											"controls": [
+												{
+													"slot@hud.inv_slot": {}
+												}
+											],
+											"bindings": [
+												{
+													"binding_type": "view",
+													"source_control_name": "slot",
+													"resolve_sibling_scope": true,
+													"source_property_name": "#item_id_aux",
+													"target_property_name": "#item_id_aux"
+												}
+											]
+										}
+									}
+								],
+								"bindings": [
+									{
+										"binding_type": "view",
+										"source_control_name": "stack",
+										"source_property_name": "#item_id_aux",
+										"target_property_name": "#item_id_aux"
+									},
+									{
+										"binding_type": "view",
+										"source_control_name": "desc",
+										"source_property_name": "((#text - $entity_heart_render) = #text)",
+										"target_property_name": "#visible"
+									}
+								]
+							}
+						},
+						{
+							"entity_renderer": {
+								"type": "custom",
+								"max_size": [11, 1],
+								"min_size": [8, 1],
+								"enable_scissor_test": true,
+								"renderer": "live_horse_renderer",
+								"anchor_from": "center",
+								"anchor_to": "center",
+								"property_bag": {
+									"#entity_id": "-4952097292285"
+								},
+								"bindings": [
+									{
+										"binding_type": "view",
+										"source_control_name": "desc",
+										"source_property_name": "(#text - $entity_heart_render) - 0",
+										"target_property_name": "#entity_id"
+									},
+									{
+										"binding_type": "view",
+										"source_control_name": "desc",
+										"source_property_name": "not ((#text - $entity_heart_render) = #text)",
+										"target_property_name": "#visible"
+									}
+								]
+							}
+						}
+					]
+				}
+			},
+			{
+				"name_container": {
+					"type": "panel",
+					"size": ["100%cm + 28px + 6px", "100%cm + 6px"],
+					"$offset|default": ["28px", "6px"],
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
+					"controls": [
+						{
+							"block_name": {
+								"type": "label",
+								"font_scale_factor": "$font_scale",
+								"layer": 1,
+								"text": "#text",
+								"localize": true,
+								"offset": "$offset",
+								"anchor_from": "top_left",
+								"anchor_to": "top_left",
+								"controls": [
+									{
+										"get_block_name": {
+											"type": "label",
+											"size": [0, 0],
+											"visible": false,
+											"text": "#text",
+											"bindings": [
+												{
+													"binding_name": "#hud_subtitle_text_string",
+													"binding_name_override": "#text"
+												},
+												{
+													"binding_name": "#hud_subtitle_text_string",
+													"binding_name_override": "#current",
+													"binding_condition": "visibility_changed"
+												},
+												{
+													"binding_type": "view",
+													"source_property_name": "(not (#text = #current)) and not ((#text - $name_const) = #text))",
+													"target_property_name": "#visible"
+												}
+											]
+										}
+									}
+								],
+								"bindings": [
+									{
+										"binding_type": "view",
+										"source_control_name": "get_block_name",
+										"resolve_sibling_scope": true,
+										"source_property_name": "(#current - $name_const)",
+										"target_property_name": "#text"
+									}
+								]
+							}
+						}
+					]
+				}
+			},
+			{
+				"namespace_container": {
+					"type": "panel",
+					"size": ["100%cm + 28px + 6px", "100%cm + 16px + 6px"],
+					"$offset|default": ["28px", "16px"],
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
+					"controls": [
+						{
+							"block_namespace": {
+								"type": "label",
+								"font_scale_factor": 0.8,
+								"text": "#text",
+								"offset": "$offset",
+								"localize": true,
+								"anchor_from": "top_left",
+								"anchor_to": "top_left",
+								"controls": [
+									{
+										"get_block_namespace": {
+											"type": "label",
+											"size": [0, 0],
+											"text": "#text",
+											"visible": false,
+											"bindings": [
+												{
+													"binding_name": "#hud_title_text_string",
+													"binding_name_override": "#text"
+												},
+												{
+													"binding_name": "#hud_title_text_string",
+													"binding_name_override": "#current_text",
+													"binding_condition": "visibility_changed"
+												},
+												{
+													"binding_type": "view",
+													"source_property_name": "(not (#text = #current_text)) and not ((#text - $namespace_const) = #text))",
+													"target_property_name": "#visible"
+												}
+											]
+										}
+									}
+								],
+								"bindings": [
+									{
+										"binding_type": "view",
+										"source_control_name": "get_block_namespace",
+										"resolve_sibling_scope": true,
+										"source_property_name": "('§o§9' + (#current_text - $namespace_const))",
+										"target_property_name": "#text"
+									}
+								]
+							}
+						}
+					]
+				}
+			},
+			{
+				"desc_container": {
+					"type": "label",
+					"size": ["100%cm + 6px + 6px", "100%cm + 26px + 6px"],
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
+					"text": "#text",
+					"controls": [
+						{
+							"desc_text": {
+								"type": "label",
+								"font_scale_factor": "$font_scale",
+								"text": "#text",
+								"anchor_from": "top_left",
+								"anchor_to": "top_left",
+								"offset": [6, 26],
+								"bindings": [
+									{
+										"binding_type": "view",
+										"source_control_name": "desc",
+										"source_property_name": "#text",
+										"target_property_name": "#text"
+									},
+									{
+										"binding_type": "view",
+										"source_control_name": "desc",
+										"source_property_name": "((#text - $entity_heart_render) = #text)",
+										"target_property_name": "#visible"
+									}
+								]
+							}
+						},
+						{
+							"heart_render": {
+								"type": "stack_panel",
+								"max_size": [9, 9],
+								"size": ["100%c", 9],
+								"clips_children": true,
+								"orientation": "horizontal",
+								"anchor_from": "top_left",
+								"anchor_to": "top_left",
+								"offset": [6, 28],
+								"controls": [
+									{
+										"heart_1@heart": {
+											"bindings": [
+												{
+													"binding_type": "view",
+													"source_control_name": "desc_text",
+													"source_property_name": "#text - "
+												}
+											]
+										}
+									},
+									{
+										"heart_2@heart": {}
+									},
+									{
+										"heart_3@heart": {}
+									},
+									{
+										"heart_4@heart": {}
+									},
+									{
+										"heart_5@heart": {}
+									},
+									{
+										"heart_6@heart": {}
+									},
+									{
+										"heart_7@heart": {}
+									},
+									{
+										"heart_8@heart": {}
+									},
+									{
+										"heart_9@heart": {}
+									},
+									{
+										"heart_10@heart": {}
+									}
+								]
+								// "bindings": [
+								//     {
+								//         "binding_type": "view",
+								//         "source_control_name": "desc_text",
+								//         "source_property_name": "(not (#visible))",
+								//         "target_property_name": "#visible"
+								//     }
+								// ]
+							}
+						}
+					],
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "desc",
+							"source_property_name": "(not (#text = ''))",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			}
+		],
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "get_disabled",
+				"source_property_name": "(not (#current_text = $view_disabled))",
+				"target_property_name": "#visible"
+			}
+		]
+	},
+	"root_panel": {
+		"modifications": [
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": [
+					{
+						"witb@hud.witb": {}
+					},
+					{
+						"get_disabled": {
+							"type": "label",
+							"size": [0, 0],
+							"text": "#text",
+							"bindings": [
+								{
+									"binding_name": "#hud_title_text_string",
+									"binding_name_override": "#text"
+								},
+								{
+									"binding_name": "#hud_title_text_string",
+									"binding_name_override": "#current_text",
+									"binding_condition": "visibility_changed"
+								},
+								{
+									"binding_type": "view",
+									"source_property_name": "(#text = $view_disabled)",
+									"target_property_name": "#visible"
+								}
+							]
+						}
+					},
+					{
+						"desc": {
+							"type": "label",
+							"text": "#text",
+							"size": [0, 0],
+							"controls": [
+								{
+									"get_desc": {
+										"type": "label",
+										"size": [0, 0],
+										"text": "#text",
+										"bindings": [
+											{
+												"binding_name": "#hud_subtitle_text_string",
+												"binding_name_override": "#text"
+											},
+											{
+												"binding_name": "#hud_subtitle_text_string",
+												"binding_name_override": "#current_text",
+												"binding_condition": "visibility_changed"
+											},
+											{
+												"binding_type": "view",
+												"source_property_name": "(not ((#hud_title_text_string - $namespace_const) = #hud_title_text_string)) and (not (#text = #current_text)) and ((#text - $name_const) = #text)",
+												"target_property_name": "#visible"
+											}
+										]
+									}
+								}
+							],
+							"bindings": [
+								{
+									"binding_type": "view",
+									"source_control_name": "get_desc",
+									"resolve_sibling_scope": true,
+									"source_property_name": "#current_text",
+									"target_property_name": "#text"
+								}
+							]
+						}
+					}
+				]
+			}
+		]
+	}
 }

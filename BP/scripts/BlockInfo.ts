@@ -43,13 +43,13 @@ export default class BlockInfo {
         this.block = new BlockBase(block)
 
         this.langKey = new TransKey(TransType.Block, this.block.isVanilla ? this.block.name : this.block.type.id)
-        this.displayer.desc.setNamespace(this.block.namespace)
+        this.displayer.desc.namespace = this.block.namespace
 
         const translator = this.getTranslator()
 
         if (translator) this.handleTranslator(translator)
         else {
-            this.displayer.name.setName(this.langKey)
+            this.displayer.name.name = this.langKey
             if (this.displayer.name.isChanged()) {
                 let old_item = this.item
                 const new_item = this.block.getItemStack()
@@ -57,7 +57,7 @@ export default class BlockInfo {
                 new_item.setLore(["witb locked"])
                 system.runTimeout(() => this.displayer.name.send(), 0)
                 this.item = new_item
-                if (!this.displayer.desc.isEmpty()) system.runTimeout(() => this.displayer.desc.forceRemoveDescription(), 1)
+                if (!this.displayer.desc.isEmpty()) system.runTimeout(() => this.displayer.desc.forceRemove(), 1)
                 system.runTimeout(() => this.item = old_item, 2)
             }
             if (this.displayer.desc.isChanged()) {
@@ -95,8 +95,8 @@ export default class BlockInfo {
                 Permutation: undefined
             }
             this.lastTranslator = undefined
-            this.displayer.name.removeName()
-            this.displayer.desc.removeDescription()
+            this.displayer.name.remove()
+            this.displayer.desc.remove()
         }
     }
 
@@ -110,7 +110,7 @@ export default class BlockInfo {
         if (trans.Override) this.langKey.Name = trans.Override
         if (trans.StateHandler) this.handleState(trans.StateHandler)
         else {
-            this.displayer.name.setName(this.langKey)
+            this.displayer.name.name = this.langKey
             if (this.displayer.name.isChanged()) {
                 let old_item = this.item
                 const new_item = this.block.getItemStack()
@@ -118,7 +118,7 @@ export default class BlockInfo {
                 new_item.setLore(["witb locked"])
                 system.runTimeout(() => this.displayer.name.send(), 0)
                 this.item = new_item
-                if (!this.displayer.desc.isEmpty()) system.runTimeout(() => this.displayer.desc.forceRemoveDescription(), 1)
+                if (!this.displayer.desc.isEmpty()) system.runTimeout(() => this.displayer.desc.forceRemove(), 1)
                 system.runTimeout(() => this.item = old_item, 2)
             }
             if (this.displayer.desc.isChanged()) {
@@ -150,12 +150,12 @@ export default class BlockInfo {
         if (name) this.langKey.Name = name.toString()
 
         if (desc) {
-            this.displayer.desc.setDescription(desc)
+            this.displayer.desc.description = desc
         } else {
-            this.displayer.desc.removeDescription()
+            this.displayer.desc.remove()
         }
 
-        this.displayer.name.setName(this.langKey)
+        this.displayer.name.name = this.langKey
 
         if (this.displayer.name.isChanged()) {
             let old_item = this.item

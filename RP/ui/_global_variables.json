@@ -4,8 +4,9 @@
         "100%cm"
     ],
     "$font_scale": 0.8,
-    "$block_view_disabled": "|witb_block_view_disabled|",
-    "$block_name_const": "|witb_block_name|",
-    "$block_icon_const": "|witb_changed_icon|",
-    "$block_namespace_const": "|witb_block_namespace|"
+    "$name_const": "|witb_name|",
+    "$view_disabled": "|witb_view_disabled|",
+    "$changed_icon": "|witb_changed_icon|",
+    "$namespace_const": "|witb_namespace|",
+    "$entity_heart_render": "|witb_heart_render|"
 }

@@ -2,7 +2,7 @@ import { Player, RawMessage } from "@minecraft/server";
 
 export type Message = string | RawMessage | (string | RawMessage)[]
 
-export abstract class Displayer {
+export default abstract class Displayer {
 
     protected player: Player
     private lastMessage: (Message | undefined)[]
