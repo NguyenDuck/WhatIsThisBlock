@@ -36,7 +36,7 @@
         "anchor_from": "top_right",
         "anchor_to": "top_right",
         "texture": "textures/ui/purpleBorder",
-        "visible": false,
+        "visible": true,
         "controls": [
             {
                 "block_renderer": {

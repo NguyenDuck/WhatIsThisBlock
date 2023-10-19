@@ -1,7 +1,7 @@
 
 
 const Settings = {
-    debugMode: false
+    debugMode: true
 }
 
 export default Settings

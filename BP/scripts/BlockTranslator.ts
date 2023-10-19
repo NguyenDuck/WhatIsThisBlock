@@ -42,7 +42,25 @@ const BlockTranslator: IBlockTranslator = {
         StateHandler: v => getGrowth(v, "growth", 4)
     },
     "stone": {
-        StateHandler: ({ states }) => [`stone.${upperCaseWhenUnderscore(states.get("stone_type") as string)}`]
+        Override: "stone.stone"
+    },
+    "granite": {
+        Override: "stone.granite"
+    },
+    "diorite": {
+        Override: "stone.diorite"
+    },
+    "andesite": {
+        Override: "stone.andesite"
+    },
+    "polished_granite": {
+        Override: "stone.graniteSmooth"
+    },
+    "polished_diorite": {
+        Override: "stone.dioriteSmooth"
+    },
+    "polished_andesite": {
+        Override: "stone.andesiteSmooth"
     },
     "monster_egg": {
         StateHandler: ({ states }) => {
@@ -107,10 +125,10 @@ const BlockTranslator: IBlockTranslator = {
             return [`${v.lang.Name}.${s2 ? "stripped." : ""}${s}`]
         }
     },
-    "planks": {
+    "*_planks": {
         StateHandler: v => {
-            let s = getState(v.states, "wood_type")
-            return [`${v.lang.Name}.${s == "dark_oak" ? "big_oak" : s}`]
+            let s = v.lang.Name.split("_")[0]
+            return [`planks.${s == "dark" ? "big_oak" : s}`]
         }
     },
     "wooden_slab": {
