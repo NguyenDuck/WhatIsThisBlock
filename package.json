@@ -2,18 +2,27 @@
 	"name": "what-is-this-block",
 	"version": "1.0.0",
 	"main": "main.ts",
-	"devDependencies": {
-		"@types/node": "^20.6.2"
+	"scripts": {
+		"build": "ts-node main --build",
+		"dev": "ts-node main --watch",
+		"export": "NODE_ENV=production ts-node main --export"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git+ssh://git@github.com/NguyenDuck/WhatIsThisBlock.git"
 	},
 	"author": "NguyenDuck",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/NguyenDuck/WhatIsThisBlock/issues"
+	"dependencies": {
+		"@swc/core": "^1.4.0",
+		"esbuild": "^0.20.0",
+		"minify-ts": "^1.1.5"
 	},
-	"homepage": "https://github.com/NguyenDuck/WhatIsThisBlock#readme",
-	"description": ""
+	"devDependencies": {
+		"@minecraft/server": "^1.9.0-beta.1.20.60-stable",
+		"@types/node": "^20.6.2",
+		"dotenv": "^16.4.1",
+		"esbuild-plugin-env": "^1.0.8",
+		"esbuild-plugin-external-package": "^1.0.0",
+		"esbuild-plugin-global-api": "^0.2.3"
+	}
 }
