@@ -6,9 +6,9 @@
 	"header": {
 		"name": "WITB - What Is This Block",
 		"description": "Show infomation what block you seeing\n§dDiscord: @NguyenDuck",
-		"min_engine_version": [1, 20, 30],
+		"min_engine_version": [1, 20, 60],
 		"uuid": "56d8ab29-fa40-48ef-9139-0ec54f24be0a",
-		"version": [1, 0, 5]
+		"version": [1, 0, 6]
 	},
 	"modules": [
 		{
@@ -31,7 +31,7 @@
 		},
 		{
 			"module_name": "@minecraft/server",
-			"version": "1.6.0-beta"
+			"version": "1.9.0-beta"
 		}
 	]
 }

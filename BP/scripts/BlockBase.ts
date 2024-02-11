@@ -1,48 +1,49 @@
-import { Block, BlockPermutation, BlockType, ItemStack, Vector3 } from "@minecraft/server";
-
+import { Block, BlockPermutation, BlockType, ItemStack, Vector3 } from '@minecraft/server'
 
 export default class BlockBase {
+	private split: string[]
+	private namespace: string
+	private name: string
 
-    private _split: string[]
-    private _namespace: string
-    private _name: string
+	constructor(private block: Block) {
+		this.split = block.typeId.split(':')
+		this.namespace = this.split[0]
+		this.name = this.split[1]
+	}
 
-    constructor(private block: Block) {
-        this._split = block.typeId.split(":")
-        this._namespace = this._split[0]
-        this._name = this._split[1]
-    }
+	getTypeId(): string {
+		return this.block.type.id
+	}
 
-    public get type(): BlockType {
-        return this.block.type
-    }
+	getType(): BlockType {
+		return this.block.type
+	}
 
-    public get permutation(): BlockPermutation {
-        return this.block.permutation
-    }
+	getPermutation(): BlockPermutation {
+		return this.block.permutation
+	}
 
-    public get location(): Vector3 {
-        return this.block.location
-    }
+	getLocation(): Vector3 {
+		return this.block.location
+	}
 
-    public get tags(): string[] {
-        return this.block.getTags()
-    }
+	getTags(): string[] {
+		return this.block.getTags()
+	}
 
-    public getItemStack(): ItemStack {
-        return this.block.getItemStack()
-    }
+	getItemStack(): ItemStack {
+		return this.block.getItemStack()!
+	}
 
+	getName(): string {
+		return this.name
+	}
 
-    public get name(): string {
-        return this._name
-    }
+	getNamespace(): string {
+		return this.namespace
+	}
 
-    public get namespace(): string {
-        return this._namespace
-    }
-
-    public get isVanilla(): boolean {
-        return this._namespace == "minecraft"
-    }
+	get isVanilla(): boolean {
+		return this.namespace == 'minecraft'
+	}
 }
